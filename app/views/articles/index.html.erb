@@ -1,0 +1,56 @@
+<!--
+<div class="container">
+<h1> Listing Articles </h1>
+<%= link_to 'New article', new_article_path %>
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>  it's @articles because the name has to match the controller name, i.e. articles_controller 
+    <tr class="tables">
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td> <article_path(article) makes the URL - if we want individual article 
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+    </tr>
+  <% end %>
+</table>
+
+
+
+<%= link_to 'New Article', new_article_path %>
+
+</div>
+
+-->
+
+<div class="container">
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+</div>
